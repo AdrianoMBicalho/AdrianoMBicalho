@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Snake // Adriano Mbicalho</title>
+<style>
+  :root { --bg:#080B14; --cyan:#22D3EE; --violet:#6D28D9; --lilac:#A78BFA; }
+  * { box-sizing: border-box; }
+  body { margin:0; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center;
+         background: radial-gradient(circle at 50% 0%, #1b1140, var(--bg) 60%); color:#C9D1D9; font-family: "Fira Code", monospace; padding:16px; }
+  h1 { color:var(--cyan); font-size:1.1rem; letter-spacing:.2em; margin:0 0 4px; text-shadow:0 0 12px var(--cyan); }
+  p { margin:0 0 12px; font-size:.8rem; color:var(--lilac); }
+  canvas { border:2px solid var(--violet); box-shadow:0 0 24px var(--violet), inset 0 0 24px #0008; background:#05070d; max-width:100%; touch-action:none; }
+  .hud { display:flex; gap:24px; margin:10px 0; font-size:.9rem; }
+  .hud b { color:var(--cyan); }
+  button { background:transparent; color:var(--cyan); border:1px solid var(--cyan); padding:8px 18px; font-family:inherit; cursor:pointer; margin-top:6px; }
+  button:hover { background:var(--cyan); color:var(--bg); }
+  .pad { display:grid; grid-template-columns:repeat(3,56px); gap:6px; margin-top:12px; }
+  .pad button { padding:12px 0; margin:0; }
+  .pad .u { grid-column:2; } .pad .l { grid-column:1; grid-row:2; } .pad .d { grid-column:2; grid-row:2; } .pad .r { grid-column:3; grid-row:2; }
+</style>
+</head>
+<body>
+  <h1>&gt; SNAKE.EXE</h1>
+  <p>Setas / WASD / swipe para jogar · Espaço pausa</p>
+  <canvas id="c" width="400" height="400"></canvas>
+  <div class="hud"><span>SCORE <b id="s">0</b></span><span>RECORDE <b id="h">0</b></span></div>
+  <button id="restart">REINICIAR</button>
+  <div class="pad">
+    <button class="u" data-d="U">▲</button><button class="l" data-d="L">◀</button>
+    <button class="d" data-d="D">▼</button><button class="r" data-d="R">▶</button>
+  </div>
+<script>
+const cv = document.getElementById('c'), ctx = cv.getContext('2d');
+const N = 20, S = cv.width / N;
+let snake, dir, next, food, score, best = 0, timer, paused, over;
+try { best = +localStorage.getItem('snakeBest') || 0; } catch (e) {}
+document.getElementById('h').textContent = best;
+
+function spawn() {
+  do { food = { x: Math.floor(Math.random()*N), y: Math.floor(Math.random()*N) }; }
+  while (snake.some(p => p.x === food.x && p.y === food.y));
+}
+function reset() {
+  snake = [{x:10,y:10},{x:9,y:10},{x:8,y:10}];
+  dir = next = {x:1,y:0}; score = 0; paused = false; over = false;
+  document.getElementById('s').textContent = 0;
+  spawn(); clearInterval(timer); timer = setInterval(tick, 110); draw();
+}
+function tick() {
+  if (paused || over) return;
+  dir = next;
+  const head = { x: snake[0].x + dir.x, y: snake[0].y + dir.y };
+  if (head.x < 0 || head.y < 0 || head.x >= N || head.y >= N || snake.some(p => p.x === head.x && p.y === head.y)) {
+    over = true;
+    if (score > best) { best = score; try { localStorage.setItem('snakeBest', best); } catch (e) {} document.getElementById('h').textContent = best; }
+    draw(); return;
+  }
+  snake.unshift(head);
+  if (head.x === food.x && head.y === food.y) {
+    score++; document.getElementById('s').textContent = score; spawn();
+  } else snake.pop();
+  draw();
+}
+function draw() {
+  ctx.fillStyle = '#05070d'; ctx.fillRect(0,0,cv.width,cv.height);
+  ctx.strokeStyle = '#ffffff08';
+  for (let i = 0; i <= N; i++) { ctx.beginPath(); ctx.moveTo(i*S,0); ctx.lineTo(i*S,cv.height); ctx.moveTo(0,i*S); ctx.lineTo(cv.width,i*S); ctx.stroke(); }
+  ctx.shadowBlur = 14; ctx.shadowColor = '#A78BFA'; ctx.fillStyle = '#A78BFA';
+  ctx.fillRect(food.x*S+3, food.y*S+3, S-6, S-6);
+  ctx.shadowColor = '#22D3EE';
+  snake.forEach((p, i) => { ctx.fillStyle = i ? '#06B6D4' : '#22D3EE'; ctx.fillRect(p.x*S+1, p.y*S+1, S-2, S-2); });
+  ctx.shadowBlur = 0;
+  if (over || paused) {
+    ctx.fillStyle = '#080Bd0'; ctx.fillRect(0,0,cv.width,cv.height);
+    ctx.fillStyle = '#22D3EE'; ctx.font = '22px monospace'; ctx.textAlign = 'center';
+    ctx.fillText(over ? 'GAME OVER' : 'PAUSADO', cv.width/2, cv.height/2);
+  }
+}
+function turn(d) {
+  const m = { U:{x:0,y:-1}, D:{x:0,y:1}, L:{x:-1,y:0}, R:{x:1,y:0} }[d];
+  if (m && !(m.x === -dir.x && m.y === -dir.y)) next = m;
+}
+addEventListener('keydown', e => {
+  const k = { ArrowUp:'U', w:'U', ArrowDown:'D', s:'D', ArrowLeft:'L', a:'L', ArrowRight:'R', d:'R' }[e.key];
+  if (k) { e.preventDefault(); turn(k); }
+  if (e.key === ' ') { e.preventDefault(); if (!over) { paused = !paused; draw(); } }
+});
+document.querySelectorAll('.pad button').forEach(b => b.onclick = () => turn(b.dataset.d));
+document.getElementById('restart').onclick = reset;
+let t0;
+cv.addEventListener('touchstart', e => { t0 = e.touches[0]; });
+cv.addEventListener('touchend', e => {
+  if (!t0) return;
+  const dx = e.changedTouches[0].clientX - t0.clientX, dy = e.changedTouches[0].clientY - t0.clientY;
+  if (Math.max(Math.abs(dx), Math.abs(dy)) < 20) return;
+  turn(Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? 'R' : 'L') : (dy > 0 ? 'D' : 'U'));
+});
+reset();
+</script>
+</body>
+</html>
