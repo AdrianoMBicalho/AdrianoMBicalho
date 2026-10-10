@@ -1,21 +1,15 @@
-<!-- PROFILE HEADER -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:080B14,50:6D28D9,100:06B6D4&height=220&section=header&text=ADRIANO%20MBICALHO&fontSize=38&fontColor=FFFFFF&animation=fadeIn&fontAlignY=35&desc=CODE%20%7C%20INNOVATION%20%7C%20FUTURE&descAlignY=56&descSize=15" width="100%" alt="Banner futurista Adriano Mbicalho"/>
-</p>
-
-<!-- TYPING EFFECT -->
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=19&duration=3000&pause=900&color=22D3EE&center=true&vCenter=true&width=700&lines=Initializing+developer+profile...;Bacharel+em+Ci%C3%AAncia+da+Computa%C3%A7%C3%A3o.;UX+%7C+Full+Stack+%7C+BI+%7C+Redes.;Learning.+Building.+Evolving." alt="Animação de texto"/>
+  <img src="./banner.svg" width="100%" alt="ADRIANO.OS - Adriano Mbicalho"/>
 </p>
 
 <p align="center">
-  <a href="https://github.com/AdrianoMBicalho">
-    <img src="https://img.shields.io/badge/GitHub-AdrianoMBicalho-111827?style=for-the-badge&logo=github&logoColor=22D3EE" alt="GitHub"/>
-  </a>
-  <a href="https://www.linkedin.com/in/adrianombicalho">
-    <img src="https://img.shields.io/badge/LinkedIn-Adriano%20Martins-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
-  </a>
-  <img src="https://img.shields.io/badge/STATUS-ALWAYS%20EVOLVING-6D28D9?style=for-the-badge&labelColor=080B14" alt="Status"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=18&duration=3000&pause=900&color=22D3EE&center=true&vCenter=true&width=700&lines=Bacharel+em+Ci%C3%AAncia+da+Computa%C3%A7%C3%A3o;UX+%7C+Full+Stack+%7C+BI+%7C+Redes;Learning.+Building.+Evolving." alt="Animação de texto"/>
+</p>
+
+<p align="center">
+  <a href="https://adrianombicalho.github.io/AdrianoMBicalho/"><img src="https://img.shields.io/badge/PORTF%C3%93LIO-ABRIR-06B6D4?style=for-the-badge&labelColor=080B14" alt="Portfólio"/></a>
+  <a href="https://www.linkedin.com/in/adrianombicalho"><img src="https://img.shields.io/badge/LinkedIn-Adriano%20Martins-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+  <a href="mailto:adrianobicalho4@gmail.com"><img src="https://img.shields.io/badge/Email-Contato-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
 </p>
 
 ```bash
@@ -25,18 +19,50 @@
     Name       : Adriano Martins (Mbicalho)
     Role       : Bacharel em Ciência da Computação
     Location   : Brumadinho, Minas Gerais, Brasil
-    Focus      : UX/UI · Desenvolvimento Full Stack · BI & Analytics · Redes
+    Focus      : UX/UI · Full Stack · BI & Analytics · Redes
     Languages  : Português (nativo) · Inglês (intermediário)
     Mission    : Transformar ideias em soluções reais.
 ```
 
-Olá! Seja bem-vindo ao meu universo digital 👾
-
-Sou formado em Ciência da Computação e pós-graduado em Full Stack, Redes de Computadores e Business Intelligence/Big Data. Venho de uma trajetória em infraestrutura e suporte de TI e hoje uniu isso com UX, desenvolvimento e dados.
+Sou formado em Ciência da Computação e pós-graduado em Full Stack, Redes de Computadores e Business Intelligence/Big Data. Venho de infraestrutura e suporte de TI e hoje junto isso com UX, desenvolvimento e dados.
 
 ---
 
-## `> tech_stack --scan`
+## `> featured_project`
+
+> 📌 **Troque este bloco pelo seu melhor projeto.** Um projeto bem documentado vale mais que dez repositórios vazios.
+
+<!-- Copie e preencha: -->
+
+### 🚀 Nome do Projeto
+
+Uma frase dizendo **qual problema ele resolve** e para quem.
+
+<!-- <p align="center"><img src="docs/screenshot.png" width="80%" alt="Screenshot do projeto"/></p> -->
+
+| | |
+|---|---|
+| **Demo online** | [link da demo](#) |
+| **Stack** | `JavaScript` · `React` · `MySQL` |
+| **Status** | 🟡 Em desenvolvimento |
+
+<details>
+<summary><b>Como rodar localmente</b></summary>
+
+```bash
+git clone https://github.com/AdrianoMBicalho/nome-do-projeto.git
+cd nome-do-projeto
+npm install
+npm start
+```
+
+</details>
+
+> 💡 **Ideias que combinam com o seu perfil:** um dashboard de impressão/ativos (sua experiência na Campello + Power BI), um portfólio de UX com estudo de caso em Figma, ou um app full stack com login e banco MySQL.
+
+---
+
+## `> tech_stack`
 
 <p align="center">
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
@@ -56,7 +82,7 @@ Sou formado em Ciência da Computação e pós-graduado em Full Stack, Redes de 
 
 ---
 
-## `> experience --history`
+## `> experience`
 
 ```text
 [2026 – hoje]   Rede Batista de Educação · Betim, MG
@@ -64,27 +90,23 @@ Sou formado em Ciência da Computação e pós-graduado em Full Stack, Redes de 
 
 [2021 – 2026]   CAMPELLO IT · Nova Lima, MG
                 Analista de Impressão (gestão de ativos)
-                Manutenção e configuração de parque de impressão
+                Manutenção e configuração do parque de impressão
                 em atendimento à Fiat Chrysler.
 
 [Estágio]       IFMG Campus Betim
                 Infraestrutura e monitoramento dos laboratórios.
 ```
 
----
-
-## `> education --load`
+## `> education`
 
 | Período | Formação | Instituição |
 |---|---|---|
-| 2024 – 2025 | Pós-graduação: Business Intelligence, Big Data e Analytics | Anhanguera |
-| 2023 – 2024 | Pós-graduação: Redes de Computadores | Anhanguera |
-| 2023 – 2024 | Pós-graduação: Full Stack | Anhanguera |
+| 2024 – 2025 | Pós: Business Intelligence, Big Data e Analytics | Anhanguera |
+| 2023 – 2024 | Pós: Redes de Computadores | Anhanguera |
+| 2023 – 2024 | Pós: Full Stack | Anhanguera |
 | 2017 – 2020 | Bacharelado em Ciência da Computação | Faculdade Pitágoras |
 
----
-
-## `> certifications --list`
+## `> certifications`
 
 - 🎨 Adobe XD: design visual de um site mobile
 - 💡 Design Thinking: viabilizando soluções
@@ -94,16 +116,15 @@ Sou formado em Ciência da Computação e pós-graduado em Full Stack, Redes de 
 
 ---
 
-## `> github_stats --overview`
+## `> live_activity`
 
-<p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=AdrianoMBicalho&show_icons=true&theme=tokyonight&hide_border=true&bg_color=080B14&title_color=22D3EE&icon_color=A78BFA&text_color=C9D1D9&rank_icon=github" alt="Estatísticas do GitHub"/>
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=AdrianoMBicalho&layout=compact&theme=tokyonight&hide_border=true&bg_color=080B14&title_color=22D3EE&text_color=C9D1D9" alt="Linguagens mais utilizadas"/>
-</p>
+_Seção atualizada automaticamente todo dia pelo GitHub Actions, direto da API oficial do GitHub._
 
-<p align="center">
-  <img src="https://streak-stats.demolab.com?user=AdrianoMBicalho&theme=tokyonight&hide_border=true&background=080B14&ring=22D3EE&fire=A78BFA&currStreakLabel=22D3EE" width="95%" alt="Sequência de contribuições"/>
-</p>
+<!--ACTIVITY:START-->
+```text
+Aguardando a primeira execução do workflow...
+```
+<!--ACTIVITY:END-->
 
 ---
 
@@ -118,56 +139,19 @@ Sou formado em Ciência da Computação e pós-graduado em Full Stack, Redes de 
 </p>
 
 <p align="center">
-  <a href="https://adrianombicalho.github.io/AdrianoMBicalho/snake.html">
-    <img src="https://img.shields.io/badge/🐍%20JOGUE%20A%20COBRINHA-06B6D4?style=for-the-badge&labelColor=080B14" alt="Jogar cobrinha"/>
-  </a>
+  <a href="https://adrianombicalho.github.io/AdrianoMBicalho/snake.html"><img src="https://img.shields.io/badge/🐍%20JOGUE%20A%20COBRINHA-06B6D4?style=for-the-badge&labelColor=080B14" alt="Jogar cobrinha"/></a>
 </p>
-
----
-
-## `> projects --featured`
-
-<p align="center">
-  <a href="https://github.com/AdrianoMBicalho?tab=repositories">
-    <img src="https://img.shields.io/badge/EXPLORE-MY%20REPOSITORIES-6D28D9?style=for-the-badge&logo=github&logoColor=white" alt="Explorar repositórios"/>
-  </a>
-</p>
-
-- **Projeto 01:** adicione aqui o nome e a descrição de um projeto seu.
-- **Projeto 02:** descreva uma aplicação ou ferramenta que você desenvolveu.
-- **Projeto 03:** apresente algo que demonstre suas habilidades.
 
 ---
 
 ## `> current_mission`
 
 ```text
-[ ACTIVE OBJECTIVES ]
-
 [x] Concluir graduação e três pós-graduações
-[ ] Construir projetos Full Stack e publicar no GitHub
+[ ] Publicar meu primeiro projeto Full Stack documentado
 [ ] Aplicar UX e dados (Power BI) em produtos reais
 [ ] Evoluir o inglês
 [ ] Contribuir com open source
-
-STATUS: IN PROGRESS...
 ```
-
----
-
-## `> connect --network`
-
-<p align="center">
-  <a href="https://www.linkedin.com/in/adrianombicalho">
-    <img src="https://img.shields.io/badge/LinkedIn-Conectar-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
-  </a>
-  <a href="mailto:adrianobicalho4@gmail.com">
-    <img src="https://img.shields.io/badge/Email-Enviar%20mensagem-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
-  </a>
-</p>
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:06B6D4,50:6D28D9,100:080B14&height=120&section=footer" width="100%" alt="Rodapé futurista"/>
-</p>
 
 <p align="center"><i>“The future belongs to those who build it.”</i></p>
